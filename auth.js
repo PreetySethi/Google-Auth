@@ -5,7 +5,7 @@ passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   //callbackURL: '/auth/google/callback/' //http://localhost:3000/auth/google/callback 
-  callbackURL: 'google-auth-qckh.onrender.com/' //https://google-auth-qckh.onrender.com/
+  callbackURL: 'https://google-auth-qckh.onrender.com/auth/google/callback' //https://google-auth-qckh.onrender.com/
 }, (accessToken, refreshToken, profile, done) => {
   return done(null, profile);
 }));
