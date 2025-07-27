@@ -4,9 +4,11 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  //callbackURL: '/auth/google/callback/' //http://localhost:3000/auth/google/callback 
-  callbackURL: 'https://google-auth-qckh.onrender.com/auth/google/callback' //https://google-auth-qckh.onrender.com/
+  callbackURL: 'http://localhost:3000/auth/google/callback'  // for local testing
+  // callbackURL: 'https://google-auth-qckh.onrender.com/auth/google/callback'  // for Render deployment
 }, (accessToken, refreshToken, profile, done) => {
+  console.log('Access Token:', accessToken);   // Optional: for debugging
+  console.log('Google Profile:', profile);     // Optional: shows returned user data
   return done(null, profile);
 }));
 
