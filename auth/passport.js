@@ -5,7 +5,7 @@ passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: 'https://google-auth-qckh.onrender.com/auth/google/callback'
- // callbackURL: 'http://localhost:3000/auth/google/callback'  // for local testing
+  //callbackURL: 'http://localhost:3000/auth/google/callback'  // for local testing
 }, (accessToken, refreshToken, profile, done) => {
   console.log("Access Token:", accessToken);
   console.log("Google Profile:", profile);
